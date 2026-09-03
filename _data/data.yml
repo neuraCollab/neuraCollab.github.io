@@ -82,11 +82,11 @@ projects:
   assignments:
   - title: AutoTopic
     link: "https://github.com/neuraCollab/ml-portfolio/tree/main/AutoTopic"
-    tagline: "Topic modeling на 373k+ логах: LDA+TF-IDF против BERTopic, автоподбор гиперпараметров (Optuna), трекинг в MLflow. Стек: Python, scikit-learn, BERTopic, MLflow."
+    tagline: "Инструмент для автоматической группировки сообщений по темам — заменяет ручную разметку. Обработал 373k+ сообщений пользователей Telegram-бота, сравнил два подхода к кластеризации и выбрал более точный. Стек: Python, scikit-learn, BERTopic, MLflow."
 
   - title: Cassandra + gRPC ML
     link: "https://github.com/neuraCollab/ml-portfolio/tree/main/cassandra-grpc-ml"
-    tagline: "Распределённый ML-сервинг на Kubernetes: gRPC round-robin с discovery по k8s API, артефакты — в MinIO после упора в лимит Cassandra на размер сообщений. Стек: Python, Kubernetes, gRPC, Cassandra, MinIO."
+    tagline: "Сервис для распределённой обработки запросов к ML-модели: нагрузка балансируется между серверами, которые можно добавлять на лету (проверил масштабирование с 1 до 5), а при отказе одного из них сервис продолжает работать. Стек: Python, Kubernetes, gRPC, Cassandra, MinIO."
 
 skills:
   title: Навыки
