@@ -265,22 +265,34 @@ p {
 }
 
 .skillset {
-  .item {
-    margin-bottom: 15px;
-    overflow: hidden;
+  .skill-group {
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
-  .level-title {
-    font-size: 14px;
+  .skill-group-title {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    font-weight: 700;
+    color: darken($theme-color, 15%);
     margin-top: 0;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
-  .level-bar {
-    height: 12px;
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .skill-tag {
+    display: inline-block;
     background: $smoky-white;
-  }
-  .level-bar-inner {
-    height: 12px;
-    background: lighten($theme-color, 15%);
+    color: #3F4650;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 14px;
   }
 }
 
