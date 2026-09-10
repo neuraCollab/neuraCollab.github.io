@@ -33,7 +33,8 @@
 
     {% if sidebar.website %}
     <li class="website"><i class="fas fa-globe-americas"></i>
-      <a href="{{ sidebar.website }}" target="_blank">{{ sidebar.website }}</a>
+      <a href="{{ sidebar.website }}" target="_blank">{{ sidebar.website_label | default: sidebar.website }}</a>
+      {% if sidebar.website_note %}<span class="link-note">({{ sidebar.website_note }})</span>{% endif %}
     </li>
     {% endif %}
 
@@ -52,6 +53,7 @@
     {% if sidebar.github %}
     <li class="github"><i class="fab fa-github"></i>
       <a href="https://github.com/{{ sidebar.github }}" target="_blank">{{ sidebar.github }}</a>
+      {% if sidebar.github_note %}<span class="link-note">({{ sidebar.github_note }})</span>{% endif %}
     </li>
     {% endif %}
 
@@ -108,6 +110,7 @@
     {% if sidebar.leetcode %}
     <li class="leetcode"><i class="fas fa-code"></i>
       <a href="https://leetcode.com/u/{{ sidebar.leetcode }}" target="_blank">{{ sidebar.leetcode }}</a>
+      {% if sidebar.leetcode_note %}<span class="link-note">({{ sidebar.leetcode_note }})</span>{% endif %}
     </li>
     {% endif %}
 
@@ -120,6 +123,7 @@
     {% if sidebar.pdf %}
     <li class="pdf"><i class="fas fa-file-pdf"></i>
       <a href="{{ sidebar.pdf }}" target="_blank">Resume PDF</a>
+      {% if sidebar.pdf_note %}<span class="link-note">({{ sidebar.pdf_note }})</span>{% endif %}
     </li>
     {% endif %}
 

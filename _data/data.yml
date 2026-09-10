@@ -8,20 +8,22 @@ sidebar:
   education: True # set to False if you want education in main section instead of in sidebar
 
   # Profile information
-  name: Михаил Шарабарин
-  tagline: ML Engineer Intern
+  name: Шарабарин Михаил
+  tagline: Machine Learning Engineer | Data Scientist
   avatar: #place a 100x100 picture inside /assets/images/ folder and provide the name of the file below
 
   # Sidebar links
   email: m.sharabarin05@mail.ru
-  phone: 8 (953) 163 68 77
-  timezone: Europe/Moscow # Enter your timezone, e.g., America/Havana, Africa/Casablanca, America/North_Dakota/Center
-  citizenship: Казахстан · готов к работе в РФ, Санкт-Петербург
-  website: # Include the full website URL, including "http://" or "https://".
+  timezone:
+  citizenship: "Готов к работе в Санкт-Петербурге и Москве · Гражданство: Казахстан"
+  website: https://github.com/neuraCollab/ml-portfolio
+  website_label: Portfolio
+  website_note: гитхаб с проектами
   linkedin:
   xing:
   github: neuraCollab
-  telegram: vbjgfc # add your nickname without '@' sign
+  github_note: гитхаб
+  telegram:
   gitlab:
   bitbucket:
   bluesky:
@@ -32,7 +34,9 @@ sidebar:
   mastodon: # Please include your full Mastodon link here.
   hackerrank: # Please provide your HackerRank username.
   leetcode: mike12345t # Please provide your LeetCode username.
-  pdf: # Add a PDF link here if you want to include a PDF custom version in your resume.
+  leetcode_note: leetcode
+  pdf: /assets/files/Mikhail-Sharabarin-Resume.pdf
+  pdf_note: на английском
 
   languages:
     title: Языки
@@ -43,28 +47,34 @@ sidebar:
 career-profile:
   title: Обо мне
   summary: |
-    Студент 4 курса СПбГУ. Сильная база в classic ML, сейчас развиваюсь в сторону
-    NLP. Люблю ресерч — дипломная работа по квантованию KV-кэша.
+    Студент 4 курса СПбГУ, специализация: NLP, LLM и классический ML (Machine
+    Learning). Ищу стажировку на позицию ML Engineer / Data Scientist в
+    направлениях NLP, LLM, Classic ML и RecSys. Имею сильную алгоритмическую
+    базу и опыт полного цикла ML-разработки — подготовка и анализ данных,
+    ML-эксперименты, обучение и интеграция моделей, model inference. Провожу
+    исследовательские эксперименты с квантованием моделей и KV-cache на GPU,
+    работаю с Python и PyTorch; развиваю C++ для ML-задач.
 
 education:
   title: Образование
   info:
-  - degree: Большие данные и распределённая цифровая платформа
-    university: СПбГУ, факультет прикладной математики и процессов управления
-    time: Очная форма · выпуск — 2027
-
-experiences:
-  title: Опыт работы
-  info:
-  - role: Фриланс-разработчик
-    time:
-    company: FL.ru
-    details: |
-      Разработка сайтов, AI-агентов и RAG-систем на заказ.
+  - degree: Прикладная математика и информатика (01.03.02)
+    university: Санкт-Петербургский государственный университет
+    time: 4 курс · очная форма · выпуск 2027
 
 certifications:
   title: Достижения
   list:
+  - name: Градиент Роста
+    start:
+    end:
+    organization:
+    credentialid:
+    credentialurl:
+    credentialname:
+    details: |
+      Top 1% участников. Соревнование по прогнозированию временных рядов:
+      предсказание цены продукта на следующий месяц. Использовал ARIMA.
   - name: Хакатон MTS Challenger
     start:
     end:
@@ -73,36 +83,44 @@ certifications:
     credentialurl:
     credentialname:
     details: |
-      Топ 15% участников.
+      Top 15% участников. В команде из 4 человек разработали и представили
+      готовый продукт — аналог Airtable с AI-интеграциями и RAG, с
+      распределением зон ответственности.
 
 projects:
   title: Проекты
-  intro: >
-    Полный код и детали — на <a href="https://github.com/neuraCollab/ml-portfolio" target="_blank">GitHub</a>, видео-обзор портфолио — <a href="https://youtu.be/4Eko7m_eC98" target="_blank">на YouTube</a>.
   assignments:
-  - title: AutoTopic
-    link: "https://github.com/neuraCollab/ml-portfolio/tree/main/AutoTopic"
-    tagline: "Инструмент для автоматической группировки сообщений по темам — заменяет ручную разметку. Обработал 373k+ сообщений пользователей Telegram-бота, сравнил два подхода к кластеризации и выбрал более точный. Стек: Python, scikit-learn, BERTopic, MLflow."
+  - title: LLM KV-Cache Quantization
+    link: "https://github.com/neuraCollab/ml-portfolio/tree/main/kv-cache-quantization-reasoning-study"
+    tagline: "Исследовал деградацию reasoning при квантовании KV-cache LLM: FP8 и HQQ INT4/INT2 на 3 моделях, 80 задачах AIME-24/MATH-500. Ввёл метрики диагностики (First Divergence Point, K-error, Attention-KL, Logit-KL) и показал локализацию деградации в outlier-каналах. Стек: Python, PyTorch, GPU."
 
-  - title: Cassandra + gRPC ML
+  - title: AutoTopic — Topic Modeling
+    link: "https://github.com/neuraCollab/ml-portfolio/tree/main/AutoTopic"
+    tagline: "Pipeline тематического моделирования (BERTopic: SentenceTransformers → UMAP → HDBSCAN → c-TF-IDF; pymorphy3/spaCy) с автоподбором гиперпараметров через Optuna. На 236K документов нашёл 59 тем; diversity 0.966 против ~0.91 у LDA. Стек: Python, BERTopic, SentenceTransformers, Optuna."
+
+  - title: Distributed ML Inference
     link: "https://github.com/neuraCollab/ml-portfolio/tree/main/cassandra-grpc-ml"
-    tagline: "Сервис для распределённой обработки запросов к ML-модели: нагрузка балансируется между серверами, которые можно добавлять на лету (проверил масштабирование с 1 до 5), а при отказе одного из них сервис продолжает работать. Стек: Python, Kubernetes, gRPC, Cassandra, MinIO."
+    tagline: "TF-IDF + One-vs-Rest LogisticRegression для классификации 50 тем; инференс через FastAPI → Coordinator → gRPC-воркеры на Kubernetes (состояние в Cassandra, артефакты в MinIO). Масштабирование 1→5 воркеров: throughput 87.1→346.2 req/s, p50 latency 684→165 мс. Стек: Python, FastAPI, Kubernetes, gRPC, Cassandra, MinIO."
+
+  - title: ECG Edge AI
+    link: "https://github.com/neuraCollab/ml-portfolio/tree/main/raspberry-pi-ecg"
+    tagline: "Система сбора ЭКГ-данных на 2×AD8232 + 2×Arduino Nano → Raspberry Pi 5 с восстановлением 6 отведений и фильтрацией сигнала. Интегрировал готовую PyTorch-модель ЭКГ (TorchScript, CPU-only inference), реализовал FastAPI/WebSocket пайплайн с signal-quality gate — 5.18 мс на предсказание. Стек: Python, PyTorch, TorchScript, FastAPI, Raspberry Pi."
 
 skills:
   title: Навыки
 
   toolset:
-  - group: ML/DL
-    items: [PyTorch, NLP, Classic ML]
+  - group: ML
+    items: [Classic ML, Deep Learning, NLP, LLM, RecSys, диффузионные модели]
 
-  - group: Данные
-    items: [NumPy, Pandas, SQL, Spark]
+  - group: Фреймворки
+    items: [PyTorch]
 
-  - group: Инфраструктура
-    items: [Docker, Kubernetes]
+  - group: Языки программирования
+    items: [Python, C++, SQL]
 
-  - group: Прочее
-    items: [Python, React]
+  - group: Инженерия
+    items: [Docker, Git, React, Next.js]
 
 footer: >
   Designed with <i class="fas fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank" rel="nofollow">Xiaoying Riley</a>
