@@ -237,7 +237,52 @@ p {
       margin-bottom: 30px;
     }
     .item {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
+    }
+    .project-card {
+      padding: 20px 24px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 8px;
+      transition: box-shadow 0.2s ease, border-color 0.2s ease;
+      &:hover {
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+        border-color: rgba(0, 0, 0, 0.14);
+      }
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .project-tag {
+      display: inline-block;
+      background: $smoky-white;
+      color: #3f4650;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 4px 10px;
+      border-radius: 14px;
+    }
+    .project-tagline {
+      margin-bottom: 10px;
+    }
+    .project-note {
+      font-style: italic;
+      font-size: 13px;
+      color: $text-grey;
+      margin-bottom: 10px;
+    }
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
   .oss-section {

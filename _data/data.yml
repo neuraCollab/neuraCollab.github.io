@@ -8,7 +8,7 @@ sidebar:
   education: True # set to False if you want education in main section instead of in sidebar
 
   # Profile information
-  name: Шарабарин Михаил
+  name: Михаил Шарабарин
   tagline: Machine Learning Engineer | Data Scientist
   avatar: #place a 100x100 picture inside /assets/images/ folder and provide the name of the file below
 
@@ -35,6 +35,9 @@ sidebar:
   hackerrank: # Please provide your HackerRank username.
   leetcode: mike12345t # Please provide your LeetCode username.
   leetcode_note: leetcode
+  resume_page: https://github.com/neuraCollab/neuraCollab.github.io
+  resume_page_label: Resume
+  resume_page_note: репозиторий сайта-резюме
   pdf: /assets/files/Mikhail-Sharabarin-Resume.pdf
   pdf_note: на английском
 
@@ -75,7 +78,7 @@ certifications:
     details: |
       Top 1% участников. Соревнование по прогнозированию временных рядов:
       предсказание цены продукта на следующий месяц. Использовал ARIMA.
-  - name: Хакатон MTS Challenger
+  - name: MTS Challenger
     start:
     end:
     organization: МТС
@@ -91,27 +94,33 @@ projects:
   title: Проекты
   assignments:
   - title: LLM KV-Cache Quantization
-    link: "https://github.com/neuraCollab/ml-portfolio/tree/main/kv-cache-quantization-reasoning-study"
-    tagline: "Исследовал деградацию reasoning при квантовании KV-cache LLM: FP8 и HQQ INT4/INT2 на 3 моделях, 80 задачах AIME-24/MATH-500. Ввёл метрики диагностики (First Divergence Point, K-error, Attention-KL, Logit-KL) и показал локализацию деградации в outlier-каналах. Стек: Python, PyTorch, GPU."
+    link: "https://github.com/neuraCollab/kv-cache-quantization-reasoning-study"
+    tagline: "Исследовал FP8 и HQQ INT4/INT2 на 3 reasoning-моделях и 80 задачах AIME-24/MATH-500. Разработал анализ First Divergence Point, K-error, Attention-KL и Logit-KL для поиска причин деградации reasoning. Показал зависимость качества от архитектуры модели и локализацию ошибок квантования в outlier-каналах; исследовал сохранение критических каналов как способ снижения деградации."
+    tags: [FP8, HQQ, KV-cache, Quantization, LLM, GPU, Reasoning]
 
   - title: AutoTopic — Topic Modeling
     link: "https://github.com/neuraCollab/ml-portfolio/tree/main/AutoTopic"
-    tagline: "Pipeline тематического моделирования (BERTopic: SentenceTransformers → UMAP → HDBSCAN → c-TF-IDF; pymorphy3/spaCy) с автоподбором гиперпараметров через Optuna. На 236K документов нашёл 59 тем; diversity 0.966 против ~0.91 у LDA. Стек: Python, BERTopic, SentenceTransformers, Optuna."
+    tagline: "Построил pipeline BERTopic: multilingual SentenceTransformers → UMAP → HDBSCAN → c-TF-IDF; для русского использовал pymorphy3, для английского — spaCy. Провёл сравнение с LDA и автоматический подбор гиперпараметров через Optuna по coherence и diversity. На полном датасете обнаружил 59 тем из 236K проанализированных документов; diversity BERTopic — 0.966 против ~0.91 у LDA."
+    tags: [NLP, BERTopic, SentenceTransformers, UMAP, HDBSCAN, LDA, Optuna]
 
   - title: Distributed ML Inference
     link: "https://github.com/neuraCollab/ml-portfolio/tree/main/cassandra-grpc-ml"
-    tagline: "TF-IDF + One-vs-Rest LogisticRegression для классификации 50 тем; инференс через FastAPI → Coordinator → gRPC-воркеры на Kubernetes (состояние в Cassandra, артефакты в MinIO). Масштабирование 1→5 воркеров: throughput 87.1→346.2 req/s, p50 latency 684→165 мс. Стек: Python, FastAPI, Kubernetes, gRPC, Cassandra, MinIO."
+    tagline: "Реализовал TF-IDF + One-vs-Rest Logistic Regression для классификации 50 тем на данных AutoTopic. Построил архитектуру FastAPI → Coordinator → gRPC workers с Kubernetes, Cassandra для состояния и MinIO для ML-артефактов. Масштабирование с 1 до 5 worker-реплик увеличило throughput с 87.1 до 346.2 req/s, снизив p50 latency с 684 до 165 мс."
+    tags: [ML Inference, FastAPI, gRPC, Kubernetes, Cassandra, MinIO, scikit-learn]
+    note: "Демонстрационная / исследовательская архитектура, не production-система."
 
   - title: ECG Edge AI
     link: "https://github.com/neuraCollab/ml-portfolio/tree/main/raspberry-pi-ecg"
-    tagline: "Система сбора ЭКГ-данных на 2×AD8232 + 2×Arduino Nano → Raspberry Pi 5 с восстановлением 6 отведений и фильтрацией сигнала. Интегрировал готовую PyTorch-модель ЭКГ (TorchScript, CPU-only inference), реализовал FastAPI/WebSocket пайплайн с signal-quality gate — 5.18 мс на предсказание. Стек: Python, PyTorch, TorchScript, FastAPI, Raspberry Pi."
+    tagline: "Собрал систему сбора данных: 2× AD8232 + 2× Arduino Nano → Raspberry Pi 5; реализовал восстановление 6 отведений и фильтрацию сигнала. Интегрировал готовую PyTorch-модель ЭКГ и подготовил её для CPU-only inference через TorchScript. Реализовал FastAPI/WebSocket inference pipeline и signal-quality gate; получил 5.18 мс на предсказание на Raspberry Pi 5."
+    tags: [PyTorch, TorchScript, Raspberry Pi 5, Edge AI, Signal Processing, FastAPI]
+    note: "Исследовательский / образовательный прототип, не является медицинским устройством."
 
 skills:
   title: Навыки
 
   toolset:
   - group: ML
-    items: [Classic ML, Deep Learning, NLP, LLM, RecSys, диффузионные модели]
+    items: [Classic ML, Deep Learning, NLP, LLM, RecSys, Diffusion Models]
 
   - group: Фреймворки
     items: [PyTorch]
